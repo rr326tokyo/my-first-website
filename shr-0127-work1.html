@@ -63,6 +63,7 @@
             border-radius: 12px;
             padding: 20px;
             text-align: left;
+            margin-bottom: 15px;
         }
 
         .expense-tracker h3 {
@@ -132,19 +133,54 @@
             color: #e74c3c;
             font-weight: bold;
         }
+
+        /* 打卡板块样式 */
+        .check-in {
+            background-color: #eef7ff;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        .check-in h3 {
+            margin: 0 0 10px 0;
+            color: #357abd;
+            font-size: 16px;
+        }
+        .check-in label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .check-in input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- 1. 头像 (请确保你的照片叫 avatar.jpg) -->
-    <img src="avatar.jpg" alt="我的头像" class="avatar">
+    <!-- 1. 头像 (必须叫 avatar.jpg) -->
+    < img src="avatar.jpg" alt="我的头像" class="avatar">
     
     <!-- 2. 名字和自我介绍 -->
     <h1>然然326</h1>
     <p class="intro">一位正在努力赚钱存钱改命的少年一枚呀，步入市场发现规律重复正确，作息规律早睡早起。</p >
 
-     <!-- 3. 每日支出记录注意板块（演示版） -->
+    <!-- 3. 打卡板块 -->
+    <div class="check-in">
+        <h3>🎯 今日打卡</h3>
+        <label>
+            <input type="checkbox" id="early-sleep">
+            早睡早起（已完成）
+        </label>
+    </div>
+
+    <!-- 4. 每日支出记录板块（演示版） -->
     <div class="expense-tracker">
         <h3>💰 每日支出记录</h3>
         <div class="input-group">
@@ -159,8 +195,7 @@
 </div>
 
 <script>
-    // 简单的 JS 逻辑：点击添加按钮时，把输入的内容加到下面的列表里
-    //版本刷新页面会清空，作为一个随堂演示足够了
+    // JS 逻辑：点击添加按钮时，把输入的内容加到下面的列表里
     function addExpense() {
         const descInput = document.getElementById('expense-desc');
         const amountInput = document.getElementById('expense-amount');
