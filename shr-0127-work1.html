@@ -136,10 +136,26 @@
         .input-group button:hover {
             background-color: #357abd;
         }
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        body.dark-mode .container {
+            background-color: #2c2c2c;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        body.dark-mode .intro, body.dark-mode .saving-goal h3, body.dark-mode .result-text p {
+            color: #cccccc;
+        }
+        body.dark-mode input {
+            background-color: #444;
+            color: white;
+            border: 1px solid #555;
+        }
     </style>
 </head>
 <body>
-
+<button onclick="toggleDarkMode()" style="position: fixed; top: 20px; right: 20px; padding: 10px; border-radius: 8px; cursor: pointer;">🌙 切换暗黑</button>
 <div class="container">
     <!-- 1. 头像 (必须叫 avatar.jpg) -->
     <img src="avatar.jpg" alt="我的头像" class="avatar">
@@ -212,6 +228,9 @@
 
         // 清空输入框，方便下次输入
         input.value = '';
+    }
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
     }
 </script>
 
