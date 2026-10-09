@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>然然326的个人主页</title>
+    <style>
+        /* 全局样式：清爽浅色背景，护眼 */
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: #f7f9fc;
+            color: #333333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* 卡片式容器：让内容居中，有轻微的阴影，显得高级 */
+        .container {
+            background-color: #ffffff;
+            width: 90%;
+            max-width: 500px;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            margin: 20px;
+        }
+
+        /* 头像设置 */
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e0e6ed;
+            margin-bottom: 20px;
+        }
+
+        /* 标题样式 */
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+            color: #1a1a1a;
+        }
+
+        /* 自我介绍文本 */
+        .intro {
+            color: #666666;
+            font-size: 15px;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        /* 支出记录板块的样式 */
+        .expense-tracker {
+            background-color: #fafbfc;
+            border: 1px solid #eaeaea;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .expense-tracker h3 {
+            margin-top: 0;
+            font-size: 16px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* 输入框和按钮的排版 */
+        .input-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .input-group input:focus {
+            border-color: #4a90e2;
+        }
+
+        .input-group button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 0 16px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .input-group button:hover {
+            background-color: #357abd;
+        }
+
+        /* 记录列表 */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+            font-size: 14px;
+        }
+
+        ul li:last-child {
+            border-bottom: none;
+        }
+
+        .expense-amount {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. 头像 (请确保你的照片叫 avatar.jpg) -->
+    < img src="avatar.jpg" alt="我的头像" class="avatar">
+    
+    <!-- 2. 名字和自我介绍 -->
+    <h1>然然326</h1>
+    <p class="intro">一位正在努力赚钱存钱改命的少年一枚呀，步入市场发现规律重复正确，作息规律早睡早起。</p >
+
+     <!-- 3. 每日支出记录注意板块（演示版） -->
+    <div class="：expense-tracker">
+       这个 <h3>💰 每日支出记录</h3>
+        <div class="input-group">
+            <input type="text" id="expense-desc" placeholder="说明 (如: 早餐)">
+            <input type="number" id="expense-amount" placeholder="金额">
+            <button onclick="addExpense()">添加</button>
+        </div>
+        <ul id="expense-list">
+            <!-- 记录会出现在这里 -->
+        </ul>
+    </div>
+</div>
+
+<script>
+    // 简单的 JS 逻辑：点击添加按钮时，把输入的内容加到下面的列表里
+    //版本刷新页面会清空，作为一个随堂演示足够了
+    function addExpense() {
+        const descInput = document.getElementById('expense-desc');
+        const amountInput = document.getElementById('expense-amount');
+        const list = document.getElementById('expense-list');
+
+        const desc = descInput.value.trim();
+        const amount = amountInput.value.trim();
+
+        // 如果没填就弹窗提示
+        if (!desc || !amount) {
+            alert('请填写说明和金额！');
+            return;
+        }
+
+        // 创建新的列表项
+        const li = document.createElement('li');
+        li.innerHTML = `<span>${desc}</span><span class="expense-amount">-¥${amount}</span>`;
+
+        // 加到列表里
+        list.appendChild(li);
+
+        // 清空输入框
+        descInput.value = '';
+        amountInput.value = '';
+    }
+</script>
+
+</body>
+</html>
