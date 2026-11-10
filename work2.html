@@ -93,6 +93,27 @@
       box-shadow: 0 2px 8px rgba(0,0,0,.15);
     }
     .audio-box audio { display: block; height: 32px; }
+        /* 活动安排表 */
+    .schedule {
+      width: 100%;
+      border-collapse: collapse;   /* 让边框合成一条线，不留缝隙 */
+      margin: 18px 0 8px;
+      font-size: 15px;
+    }
+    .schedule th,
+    .schedule td {
+      border: 1px solid #e2cdb6;
+      padding: 10px 12px;
+      text-align: center;          /* “第二行内容居中”就是这句 */
+      vertical-align: middle;
+    }
+    .schedule thead th { background: #f6e7d8; color: #6b4525; }
+    .schedule .table-title {
+      background: #8b5e34;
+      color: #fff;
+      font-size: 17px;
+      letter-spacing: 1px;
+    }
   </style>
 </head>
 <!-- id="top" 是“页面最顶部”的标记，返回顶部就是跳到它 -->
@@ -124,7 +145,45 @@
     </section>
     <section id="schedule">
       <h2>活动安排</h2>
-      <p>（这里以后放 2026 年春季学期活动安排表。）</p>
+            <!-- 活动安排表：总标题跨 4 列，地点列跨 2 行 -->
+      <table class="schedule">
+        <thead>
+          <tr>
+            <th colspan="4" class="table-title">尤克里里社 2026 年春季学期活动安排表</th>
+          </tr>
+          <tr>
+            <th>活动名称</th>
+            <th>活动时间</th>
+            <th>活动地点</th>
+            <th>负责人</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>新成员见面会</td>
+            <td>3 月第 2 周 周五晚</td>
+            <td rowspan="2">学生活动中心 音乐教室 201</td>
+            <td>林晓</td>
+          </tr>
+          <tr>
+            <td>尤克里里基础教学公开课</td>
+            <td>3 月第 3 周 周六下午</td>
+            <td>陈默</td>
+          </tr>
+          <tr>
+            <td>校园草地弹唱会</td>
+            <td>4 月第 2 周 周日</td>
+            <td>操场东侧草坪</td>
+            <td>王可</td>
+          </tr>
+          <tr>
+            <td>期末专场音乐会</td>
+            <td>6 月第 1 周 周六晚</td>
+            <td>大学生活动中心 大礼堂</td>
+            <td>刘一诺</td>
+          </tr>
+        </tbody>
+      </table>）
       <a class="back" href="#top">↑ 返回顶部</a>
     </section>
     <section id="gallery">
