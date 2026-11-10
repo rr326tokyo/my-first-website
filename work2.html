@@ -81,10 +81,28 @@
       color: #8a7a6a;
       font-size: 14px;
     }
+        /* 背景音乐：固定在左上角，滚动时也不动 */
+    .audio-box {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 100;
+      background: rgba(255,255,255,.85);
+      padding: 4px 6px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    }
+    .audio-box audio { display: block; height: 32px; }
   </style>
 </head>
 <!-- id="top" 是“页面最顶部”的标记，返回顶部就是跳到它 -->
 <body id="top">
+    <!-- 背景音乐：左上角播放条，点播放键开始，loop 循环 -->
+  <div class="audio-box">
+    <audio src="bgm.mp3" controls loop preload="auto">
+      您的浏览器不支持 audio 标签。
+    </audio>
+  </div>
   <header>
     <h1>尤克里里社</h1>
     <p>Ukulele Club ｜ 2026 年春季招新</p>
