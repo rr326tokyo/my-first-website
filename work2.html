@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!-- 上面这一行声明：这是一个 HTML5 网页。每个网页的第一行都写它。 -->
+<html lang="zh-CN">
+<head>
+  <!-- meta charset 告诉浏览器用 UTF-8 读文件，不写这一行中文会变乱码 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>尤克里里社招新</title>
+  <!-- style 标签里写 CSS，负责“长什么样”。先照抄，不用改。 -->
+  <style>
+    html { scroll-behavior: smooth; }        /* 点锚点链接时平滑滚动 */
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+      background: #fdf8f0;
+      color: #3b2f2f;
+      line-height: 1.8;
+    }
+    /* 页头 */
+    header {
+      background: linear-gradient(135deg, #8b5e34, #c98b5e);
+      color: #fff;
+      text-align: center;
+      padding: 48px 20px;
+    }
+    header h1 { margin: 0; font-size: 42px; letter-spacing: 4px; }
+    header p  { margin: 10px 0 0; opacity: .9; }
+    /* 导航条：sticky 让它在滚动时一直贴在顶部 */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #fff;
+      text-align: center;
+      padding: 12px 0;
+      border-bottom: 2px solid #e8d5c0;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+    nav a {
+      display: inline-block;
+      margin: 6px 10px;
+      color: #8b5e34;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 4px 10px;
+      border-radius: 6px;
+      transition: background .2s;
+    }
+    nav a:hover { background: #f6e7d8; }
+    /* 每个板块的卡片样式 */
+    section {
+      max-width: 900px;
+      margin: 28px auto;
+      padding: 26px 32px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(139,94,52,.08);
+      min-height: 70vh;          /* 临时撑高度，方便你看到“跳转”效果；换成长文后删掉 */
+      scroll-margin-top: 70px;   /* 跳转时别被吸顶导航挡住标题 */
+    }
+    section h2 {
+      margin-top: 0;
+      color: #8b5e34;
+      border-left: 6px solid #e0a458;
+      padding-left: 12px;
+    }
+    /* 返回顶部按钮 */
+    .back {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 8px 18px;
+      background: #e0a458;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 20px;
+    }
+    .back:hover { background: #c98b5e; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #8a7a6a;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<!-- id="top" 是“页面最顶部”的标记，返回顶部就是跳到它 -->
+<body id="top">
+  <header>
+    <h1>尤克里里社</h1>
+    <p>Ukulele Club ｜ 2026 年春季招新</p>
+  </header>
+  <!-- 导航：href="#xxx" 跳到 id="xxx" 的位置，这就是锚点链接 -->
+  <nav>
+    <a href="#intro">社团简介</a>
+    <a href="#schedule">活动安排</a>
+    <a href="#gallery">风采展示</a>
+    <a href="#story">社员故事</a>
+    <a href="#signup">在线报名</a>
+  </nav>
+  <main>
+    <section id="intro">
+      <h2>社团简介</h2>
+      <p>（这里以后放 1000 字以上的社团简介文字。）</p>
+      <p>尤克里里只有四根弦，体积小、上手快，是很多人第一件真正能弹唱起来的乐器。</p>
+      <a class="back" href="#top">↑ 返回顶部</a>
+    </section>
+    <section id="schedule">
+      <h2>活动安排</h2>
+      <p>（这里以后放 2026 年春季学期活动安排表。）</p>
+      <a class="back" href="#top">↑ 返回顶部</a>
+    </section>
+    <section id="gallery">
+      <h2>风采展示</h2>
+      <p>（这里以后放社团日常演奏照片和视频。）</p>
+      <a class="back" href="#top">↑ 返回顶部</a>
+    </section>
+    <section id="story">
+      <h2>社员故事</h2>
+      <p>（这里以后放 1000 字以上的社员故事。）</p>
+      <a class="back" href="#top">↑ 返回顶部</a>
+    </section>
+    <section id="signup">
+      <h2>在线报名</h2>
+      <p>（这里以后放报名表。）</p>
+      <a class="back" href="#top">↑ 返回顶部</a>
+    </section>
+  </main>
+  <footer>尤克里里社 · 2026 春季招新 · 本页面为课程作业</footer>
+</body>
+</html>
