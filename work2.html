@@ -114,6 +114,21 @@
       font-size: 17px;
       letter-spacing: 1px;
     }
+    /* 风采展示图片 */
+.photo {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .15);
+  display: block;
+  margin: 0 auto;
+}
+.photo-tip {
+  text-align: center;
+  color: #8a7a63;
+  font-size: 14px;
+  margin-top: 10px;
+}
   </style>
 </head>
 <!-- id="top" 是“页面最顶部”的标记，返回顶部就是跳到它 -->
@@ -186,11 +201,18 @@
       </table>
       <a class="back" href="#top">↑ 返回顶部</a>
     </section>
-    <section id="gallery">
-      <h2>风采展示</h2>
-      <p>（这里以后放社团日常演奏照片和视频。）</p>
-      <a class="back" href="#top">↑ 返回顶部</a>
-    </section>
+      <section id="gallery">
+    <h2>风采展示</h2>
+    <p>社团日常排练、草地弹唱、期末专场的照片与视频。</p>
+
+    <!-- 点击图片 → 跳转到 club_intro.html（新标签页打开） -->
+    <a href="club_intro.html" target="_blank">
+      <img src="club.jpeg" alt="尤克里里社社团活动照片" class="photo">
+    </a>
+    <p class="photo-tip">点击图片查看社团详细介绍 →</p>
+
+    <a class="back" href="#top">↑ 返回顶部</a>
+  </section>
     <section id="story">
       <h2>社员故事</h2>
       <p>（这里以后放 1000 字以上的社员故事。）</p>
