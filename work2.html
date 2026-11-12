@@ -8,7 +8,8 @@
   <title>尤克里里社招新</title>
   <!-- style 标签里写 CSS，负责“长什么样”。先照抄，不用改。 -->
   <style>
-    html { scroll-behavior: smooth; }        /* 点锚点链接时平滑滚动 */
+        html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
@@ -16,7 +17,7 @@
       color: #3b2f2f;
       line-height: 1.8;
     }
-    /* 页头 */
+
     header {
       background: linear-gradient(135deg, #8b5e34, #c98b5e);
       color: #fff;
@@ -24,59 +25,111 @@
       padding: 48px 20px;
     }
     header h1 { margin: 0; font-size: 42px; letter-spacing: 4px; }
-    header p  { margin: 10px 0 0; opacity: .9; }
-    /* 导航条：sticky 让它在滚动时一直贴在顶部 */
+    header p { margin: 10px 0 0; opacity: .9; }
+
     nav {
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 50;
       background: #fff;
       text-align: center;
-      padding: 12px 0;
-      border-bottom: 2px solid #e8d5c0;
-      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+      padding: 14px 10px;
+      box-shadow: 0 2px 10px rgba(139, 94, 52, .12);
     }
     nav a {
       display: inline-block;
-      margin: 6px 10px;
+      margin: 4px 12px;
       color: #8b5e34;
       text-decoration: none;
       font-weight: bold;
-      padding: 4px 10px;
-      border-radius: 6px;
-      transition: background .2s;
     }
-    nav a:hover { background: #f6e7d8; }
-    /* 每个板块的卡片样式 */
+    nav a:hover { color: #c98b5e; text-decoration: underline; }
+
+    main { max-width: 900px; margin: 0 auto; padding: 20px; }
     section {
-      max-width: 900px;
-      margin: 28px auto;
-      padding: 26px 32px;
       background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 16px rgba(139,94,52,.08);
-      min-height: 70vh;          /* 临时撑高度，方便你看到“跳转”效果；换成长文后删掉 */
-      scroll-margin-top: 70px;   /* 跳转时别被吸顶导航挡住标题 */
+      border-radius: 14px;
+      padding: 30px 34px;
+      margin: 28px 0;
+      box-shadow: 0 8px 24px rgba(139, 94, 52, .10);
     }
     section h2 {
-      margin-top: 0;
       color: #8b5e34;
-      border-left: 6px solid #e0a458;
+      border-left: 6px solid #c98b5e;
       padding-left: 12px;
+      margin-top: 0;
     }
-    /* 返回顶部按钮 */
+
     .back {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 22px;
       padding: 8px 18px;
-      background: #e0a458;
+      background: #c98b5e;
       color: #fff;
       text-decoration: none;
-      border-radius: 20px;
+      border-radius: 999px;
+      font-size: 14px;
     }
-    .back:hover { background: #c98b5e; }
-    footer {
-          /* ===== 报名表 ===== */
+    .back:hover { background: #8b5e34; }
+
+    .audio-box {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 100;
+      background: rgba(255, 255, 255, .92);
+      padding: 6px 8px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+    }
+    .audio-box audio { height: 32px; }
+
+    table.schedule {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+    }
+    table.schedule th,
+    table.schedule td {
+      border: 1px solid #e2d3bf;
+      padding: 12px 10px;
+      text-align: center;
+    }
+    table.schedule th { background: #f7ead9; color: #6b4526; }
+    table.schedule .table-title {
+      background: #8b5e34;
+      color: #fff;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    .photo {
+      width: 100%;
+      max-width: 520px;
+      display: block;
+      margin: 0 auto;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .15);
+    }
+    .photo-tip {
+      text-align: center;
+      color: #8a7a63;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    .video {
+      display: block;
+      margin: 24px auto;
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .video-tip {
+      text-align: center;
+      color: #8a7a63;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
     table.signup {
       width: 100%;
       border-collapse: collapse;
@@ -122,61 +175,8 @@
       margin: 0 8px;
     }
     table.signup .btn-reset { background: #c9b8a4; }
-      text-align: center;
-      padding: 24px;
-      color: #8a7a6a;
-      font-size: 14px;
-    }
-        /* 背景音乐：固定在左上角，滚动时也不动 */
-    .audio-box {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      z-index: 100;
-      background: rgba(255,255,255,.85);
-      padding: 4px 6px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,.15);
-    }
-    .audio-box audio { display: block; height: 32px; }
-        /* 活动安排表 */
-    .schedule {
-      width: 100%;
-      border-collapse: collapse;   /* 让边框合成一条线，不留缝隙 */
-      margin: 18px 0 8px;
-      font-size: 15px;
-    }
-    .schedule th,
-    .schedule td {
-      border: 1px solid #e2cdb6;
-      padding: 10px 12px;
-      text-align: center;          /* “第二行内容居中”就是这句 */
-      vertical-align: middle;
-    }
-    .schedule thead th { background: #f6e7d8; color: #6b4525; }
-    .schedule .table-title {
-      background: #8b5e34;
-      color: #fff;
-      font-size: 17px;
-      letter-spacing: 1px;
-    }
-    /* 风采展示图片 */
-.photo {
-  width: 100%;
-  max-width: 520px;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, .15);
-  display: block;
-  margin: 0 auto;
-}
-.photo-tip {
-  text-align: center;
-  color: #8a7a63;
-  font-size: 14px;
-  margin-top: 10px;
-}
-    .video { display:block; margin:24px auto; max-width:100%; border-radius:10px; }
-.video-tip { text-align:center; color:#8a7a63; font-size:14px; }
+
+    footer { text-align: center; color: #9a8a78; font-size: 13px; padding: 24px; }
   </style>
 </head>
 <!-- id="top" 是“页面最顶部”的标记，返回顶部就是跳到它 -->
