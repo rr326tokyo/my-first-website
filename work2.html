@@ -76,6 +76,52 @@
     }
     .back:hover { background: #c98b5e; }
     footer {
+          /* ===== 报名表 ===== */
+    table.signup {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+    }
+    table.signup td {
+      border: 1px solid #e2d3bf;
+      padding: 12px 14px;
+      vertical-align: top;
+      text-align: left;
+    }
+    table.signup td.label {
+      width: 130px;
+      background: #f7ead9;
+      color: #6b4526;
+      font-weight: bold;
+      text-align: right;
+    }
+    table.signup input[type="text"],
+    table.signup select,
+    table.signup textarea {
+      font-family: inherit;
+      font-size: 15px;
+      padding: 6px 8px;
+      border: 1px solid #d8c6ae;
+      border-radius: 6px;
+    }
+    table.signup input[type="text"] { width: 240px; }
+    table.signup textarea {
+      width: 100%;
+      min-height: 100px;
+      box-sizing: border-box;
+    }
+    table.signup td.buttons { text-align: center; }
+    table.signup .btn {
+      padding: 9px 28px;
+      border: none;
+      border-radius: 999px;
+      background: #8b5e34;
+      color: #fff;
+      font-size: 15px;
+      cursor: pointer;
+      margin: 0 8px;
+    }
+    table.signup .btn-reset { background: #c9b8a4; }
       text-align: center;
       padding: 24px;
       color: #8a7a6a;
@@ -134,6 +180,7 @@
   </style>
 </head>
 <!-- id="top" 是“页面最顶部”的标记，返回顶部就是跳到它 -->
+  
 <body id="top">
     <!-- 背景音乐：左上角播放条，点播放键开始，loop 循环 -->
   <div class="audio-box">
@@ -154,10 +201,29 @@
     <a href="#signup">在线报名</a>
   </nav>
   <main>
-    <section id="intro">
+        <section id="intro">
       <h2>社团简介</h2>
-      <p>（这里以后放 1000 字以上的社团简介文字。）</p>
-      <p>尤克里里只有四根弦，体积小、上手快，是很多人第一件真正能弹唱起来的乐器。</p>
+
+      <p>尤克里里社成立于 2019 年 9 月，最初只有四个人——同宿舍的四个女生，一把从网上买的二十三寸入门琴，和宿舍阳台上一块不到两平米的地方。那年秋天她们把一首《晴天》弹得很不齐，录下来发在校园论坛上，评论里有人说“想学”。第二年招新，来了三十七个人。</p>
+
+      <p>“尤克里里”这个名字来自夏威夷语 ʻukulele，意思是“跳动的跳蚤”——传说是因为弹琴的手指在琴弦上跳动得像跳蚤。它只有四根弦，标准定弦是 G-C-E-A，体积小，最常用的二十三寸琴全长不到六十厘米，重量不到五百克，背包侧袋就能装下。</p>
+
+      <p>常见的尤克里里有四种尺寸：二十一寸的高音琴声音清亮，适合弹唱；二十三寸的中音琴是社团公用琴的主力，音量和手感都比较平衡；二十六寸的次中音琴音域更宽，适合指弹；三十寸的低音琴接近吉他的音色，社团里只有一把，通常放在排练室不往外借。</p>
+
+      <p>社团现在的组织分成四块：社长统筹全社事务，教学组负责每周的课程和新人带练，演出组管排练、编曲和舞台，宣传组做海报、拍视频和维护这个网站。每两周开一次例会，所有组的人都可以来，会上定下接下来一个月的安排。</p>
+
+      <p>课程分三级。基础课每周四晚七点在学生活动中心 201，从怎么抱琴、左手怎么按弦讲起，第一个月只学四个和弦——C、Am、F、G7，配右手最常用的分解节奏 53231323。第二个月开始学扫弦，第三个月能完整弹唱一首四个和弦的歌。进阶课在周日下午，讲指弹、切音、击弦和滑音，也会讲一点乐理：调式、和弦级数、怎么把一首歌移到适合自己的调上。</p>
+
+      <p>除了固定课程，社团每学期有两次草地弹唱会，在操场东侧草坪，谁都可以上去唱一首，唱错了也没人笑；期末在大礼堂办一场专场音乐会，从选曲、分声部、改调到灯光音响，全部由社员自己完成。去年专场我们演了十四首曲子，台下坐了六百多人。</p>
+
+      <p>社团备有二十把公用琴，新成员前两个月可以免费借用，确定要长期学再考虑自己买——入门琴的价格通常在两百到四百之间，我们不建议一上来就买贵的。会费每学期三十元，用于买琴弦、谱架、调音器和活动物料，收支每学期在群里公示一次。</p>
+
+      <p>我们不太在意你之前有没有基础。社里现在弹得最好的几个人，进社的时候连琴都没摸过；也有社员一直弹得很一般，但每场活动都来，坐在最后一排给大家打拍子。这两种人在我们这儿都算数。</p>
+
+      <p>如果你只是想找人一起唱歌，也欢迎来旁听。排练室的椅子永远多摆十把，因为总有人是跟着朋友来的，坐着坐着就留下来了。</p>
+
+      <p>五年下来，社团累计有两百多名社员，改编过四十多首曲子，办过二十多场大大小小的演出。这个数字不算多，但每一场都是自己一点点攒起来的。</p>
+
       <a class="back" href="#top">↑ 返回顶部</a>
     </section>
     <section id="schedule">
@@ -216,14 +282,161 @@
     <embed src="play.mp4" width="480" height="270" class="video">
     <a class="back" href="#top">↑ 返回顶部</a>
   </section>
-    <section id="story">
+        <section id="story">
       <h2>社员故事</h2>
-      <p>（这里以后放 1000 字以上的社员故事。）</p>
+
+      <p>大二那年秋天，我在食堂门口被塞了一张传单。</p>
+
+      <p>红色的小纸片，上面印着一把橙色的小吉他，写着“尤克里里社招新，零基础可入”。我当时正准备把传单揉成一团扔进垃圾桶——我从小到大跟音乐最大的交集，是初中音乐课上被老师点名唱《茉莉花》，唱到第二句全班就笑了。</p>
+
+      <p>但那天摊位后面的社长拦住我，说了一句话：“你只要会按两个格子，就能弹一首歌。”</p>
+
+      <p>我不信。他就把琴塞到我手里，握着我的左手按下两个位置，右手往下扫了一下。声音从琴箱里出来的时候，我愣住了。那是一种很轻、很干净的声音，像一个小孩在笑。</p>
+
+      <p>我就这样进了社。</p>
+
+      <p>第一节课在学生活动中心 201。二十多把琴整整齐齐挂在墙上的架子上，橙的、绿的，还有一把透明的。社长从持琴姿势讲起，右手怎么拨，左手怎么按，和弦叫什么名字。他说别急着学歌，先把 C、Am、F、G7 四个和弦按熟。</p>
+
+      <p>第一个星期，我的左手食指起了三个水泡。</p>
+
+      <p>按 F 和弦的时候，四根手指要同时按在不同的位置，无名指总是软下去，发出“吱”的一声闷响。我练了整整两个晚上，从宿舍楼下的长椅练到熄灯，手指疼得连笔都握不住。</p>
+
+      <p>第八天晚上，我按对了。四个和弦连起来，一次就顺下来了。我在空无一人的走廊里来回扫了二十遍，扫到打扫卫生的阿姨问我在干嘛。</p>
+
+      <p>第十天，我弹完了人生第一首歌，一首只用四个和弦的民谣。</p>
+
+      <p>社团每周四晚有基础课，周日下午分组排练。我进的是“弹唱组”，组里有会唱歌的，有会弹的，还有一个只会打节拍的男生——他后来成了我们组的“人体节拍器”，每次排练坐在最边上拍大腿，拍得比谁都准。</p>
+
+      <p>四月，社团在操场东侧草坪办草地弹唱会。</p>
+
+      <p>我上台弹的是一首练了两个月的歌。坐在草地上的人不多，二十来个，还有几个是路过停下来听的。我坐到麦克风前，手一直在抖，第一句差点跑调。弹到副歌的时候，后排有人跟着哼起来，然后越来越多人跟着唱。</p>
+
+      <p>那是我第一次知道，原来一群人一起唱一首歌，是这个感觉。</p>
+
+      <p>六月，期末专场在大礼堂。</p>
+
+      <p>我们排练了整整一个月，从选曲、分声部、改调到灯光，全是社员自己弄的。演出那天，礼堂坐了一半。我在第三排弹伴奏，台上的主唱是我们组的女生，唱到第二段的时候她突然看了我一眼，我知道该进间奏了。</p>
+
+      <p>那天的掌声我现在还记得。</p>
+
+      <p>现在我是社团的教学负责人。每周四晚站在 201 的讲台上，看着新来的大一学生坐在下面，手指不知道往哪放的样子，跟两年前的我一模一样。</p>
+
+      <p>有个男生第一次按 F 和弦按不出来，有点急，说“我是不是没天赋”。我说，没有天赋这回事，我当初也是这样，你明天再按一次就好了。</p>
+
+      <p>他真的第二天又来了。现在他坐在教室最后一排，能一口气弹完三首歌。</p>
+
+      <p>我没跟他讲过的是：两年前那个差点把传单扔进垃圾桶的人，现在每天睡前都要摸十分钟琴。不是因为要练什么，就是想让那个声音在手里响一会儿。</p>
+
+      <p>尤克里里只有四根弦，弹不出什么高深的曲子。但它便宜、轻、不吵，一个人在任何地方都能拿出来弹两分钟。我想这就是它适合入门的原因——它不要求你有多厉害，只要求你愿意开始。</p>
+
       <a class="back" href="#top">↑ 返回顶部</a>
     </section>
-    <section id="signup">
+        <section id="signup">
       <h2>在线报名</h2>
-      <p>（这里以后放报名表。）</p>
+      <p>填写下面的信息，我们会在招新结束后一周内联系你。</p>
+
+      <form action="#" method="post">
+        <table class="signup">
+          <!-- 1 姓名 -->
+          <tr>
+            <td class="label">姓名</td>
+            <td><input type="text" name="name" placeholder="请输入你的姓名"></td>
+          </tr>
+
+          <!-- 2 性别 -->
+          <tr>
+            <td class="label">性别</td>
+            <td>
+              <label><input type="radio" name="gender" value="男" checked> 男</label>
+              <label><input type="radio" name="gender" value="女"> 女</label>
+            </td>
+          </tr>
+
+          <!-- 3 出生日期：三个文本框 -->
+          <tr>
+            <td class="label">出生日期</td>
+            <td>
+              <input type="text" name="year"  size="6" placeholder="年"> 年
+              <input type="text" name="month" size="4" placeholder="月"> 月
+              <input type="text" name="day"   size="4" placeholder="日"> 日
+            </td>
+          </tr>
+
+          <!-- 4 手机 -->
+          <tr>
+            <td class="label">手机号码</td>
+            <td><input type="text" name="phone" placeholder="请输入 11 位手机号"></td>
+          </tr>
+
+          <!-- 5 邮箱 -->
+          <tr>
+            <td class="label">电子邮箱</td>
+            <td><input type="text" name="email" placeholder="请输入常用邮箱"></td>
+          </tr>
+
+          <!-- 6 乐器基础：单选 -->
+          <tr>
+            <td class="label">乐器基础</td>
+            <td>
+              <label><input type="radio" name="level" value="零基础" checked> 零基础</label>
+              <label><input type="radio" name="level" value="会一点"> 会一点</label>
+              <label><input type="radio" name="level" value="比较熟练"> 比较熟练</label>
+            </td>
+          </tr>
+
+          <!-- 7 兴趣方向：多选 -->
+          <tr>
+            <td class="label">兴趣方向</td>
+            <td>
+              <label><input type="checkbox" name="interest" value="弹唱"> 弹唱</label>
+              <label><input type="checkbox" name="interest" value="指弹"> 指弹</label>
+              <label><input type="checkbox" name="interest" value="伴奏"> 伴奏</label>
+              <label><input type="checkbox" name="interest" value="写歌"> 写歌</label>
+              <label><input type="checkbox" name="interest" value="演出策划"> 演出策划</label>
+            </td>
+          </tr>
+
+          <!-- 8 年级：下拉菜单 -->
+          <tr>
+            <td class="label">年级</td>
+            <td>
+              <select name="grade">
+                <option value="大一">大一</option>
+                <option value="大二">大二</option>
+                <option value="大三">大三</option>
+                <option value="大四">大四</option>
+                <option value="研究生">研究生</option>
+              </select>
+            </td>
+          </tr>
+
+          <!-- 9 自我介绍：多行文本框 -->
+          <tr>
+            <td class="label">自我介绍</td>
+            <td>
+              <textarea name="intro" rows="5" placeholder="介绍一下你自己：之前有没有接触过乐器，想学什么歌，或者随便说点什么。"></textarea>
+            </td>
+          </tr>
+
+          <!-- 10 是否服从调剂：单选 -->
+          <tr>
+            <td class="label">是否服从安排</td>
+            <td>
+              <label><input type="radio" name="obey" value="是" checked> 是</label>
+              <label><input type="radio" name="obey" value="否"> 否</label>
+            </td>
+          </tr>
+
+          <!-- 按钮 -->
+          <tr>
+            <td colspan="2" class="buttons">
+              <input type="submit" value="提交报名" class="btn">
+              <input type="reset"  value="重新填写" class="btn btn-reset">
+            </td>
+          </tr>
+        </table>
+      </form>
+
       <a class="back" href="#top">↑ 返回顶部</a>
     </section>
   </main>
